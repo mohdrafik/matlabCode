@@ -1,0 +1,23 @@
+# Ignore backup files and temporary files
+*~
+*.asv
+*.tmp
+*.log
+
+# MATLAB specific files
+*.mexw32
+*.mexw64
+*.mexa64
+*.mexmaci64
+
+
+# Ignore output and cache folders
+/output/
+/cache/
+
+# ignoring the unnecessary files
+*.jpg
+*.jpeg
+*.docx
+/cath-original
+/catherine/MPDDA-1.0-master.zip
