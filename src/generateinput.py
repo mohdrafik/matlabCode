@@ -66,7 +66,7 @@ for shape in shapes:
         df_combinations = pd.DataFrame(valid_combinations)
 
         # Save the DataFrame to a CSV file
-        output_file_path = r"C:\Users\mrafik\Desktop\catherine\MPDDA-1.0-master\MPDDA-1.0-master"
+        output_file_path = r"E:\teaching  urban pro_superprof\matproject_cath\data\processed"
         output_file_name = f"parameter_combinations_{shape}.csv"
         output_file_path1 = os.path.join(output_file_path,output_file_name)
         # df_combination
@@ -107,7 +107,7 @@ for shape in shapes:
     # Convert to DataFrame
         df_combinations = pd.DataFrame(valid_combinations)
             # Save the DataFrame to a CSV file formatted for MATLAB
-        output_file_path = r"C:\Users\mrafik\Desktop\catherine\MPDDA-1.0-master\MPDDA-1.0-master"
+        output_file_path = r"E:\teaching  urban pro_superprof\matproject_cath\data\processed"
         output_file_name = f"parameter_combinations_{shape}.csv"
         output_file_path1 = os.path.join(output_file_path,output_file_name)
         # df_combination
@@ -152,7 +152,7 @@ for shape in shapes:
             # Convert to DataFrame for better visualization
         df_combinations = pd.DataFrame(valid_combinations)
         # Save the DataFrame to a CSV file formatted for MATLAB
-        output_file_path = r"C:\Users\mrafik\Desktop\catherine\MPDDA-1.0-master\MPDDA-1.0-master"
+        output_file_path = r"E:\teaching  urban pro_superprof\matproject_cath\data\processed"
         output_file_name = f"parameter_combinations_{shape}.csv"
         output_file_path1 = os.path.join(output_file_path,output_file_name)
         # df_combination

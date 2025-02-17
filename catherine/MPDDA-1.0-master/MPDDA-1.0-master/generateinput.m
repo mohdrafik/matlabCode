@@ -4,7 +4,8 @@
 % Saves results in CSV files
 %==========================================================================
 clc
-clear all;
+% clear all;
+close all;
 
 
 % "E:\teaching  urban pro_superprof\matproject_cath\data\processed\matcombfile"
