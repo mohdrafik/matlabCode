@@ -23,7 +23,8 @@ function [d, N, r_eff, t0_initial, Total_Time, Time_each, Wavelength,  Q_EXT, Q_
         %========= loading Wavelength & Bulk Refractive index of the metal =======%
         %=========================================================================%
         % if input data are saved in a excell sheet it can load as below
-        Data = xlsread('E:\teaching  urban pro_superprof\matproject_cath\catherine\MPDDA-1.0-master\MPDDA-1.0-master\Au_Bulk_RI.xlsx');
+%         Data = xlsread('E:\teaching  urban pro_superprof\matproject_cath\catherine\MPDDA-1.0-master\MPDDA-1.0-master\Au_Bulk_RI.xlsx');
+        Data = xlsread('C:\Users\Gaetano\Desktop\create_with_codeRafi\SharedContents\OneDrive - C.N.R. STIIMA\matproject_cath\catherine\MPDDA-1.0-master\MPDDA-1.0-master\Au_Bulk_RI.xlsx');
         % if input data are m.file, it can be loaded: ... Data=load('Copy the
         % address link of the initial data here');
         
@@ -38,30 +39,30 @@ function [d, N, r_eff, t0_initial, Total_Time, Time_each, Wavelength,  Q_EXT, Q_
         %============================== Input Parameters =========================%
         %=========================================================================%
         
-        fprintf('\nThe package can be run both in CPU and GPU.');
-        GPU=input('\nEnter 1 for running in GPU, and 0 for running in CPU:');
-        clc
-        nb=input('\nEnter the refractive index of the surrounding medium:');
-        clc
-        fprintf('\nEffective radius is defined as the radius of a sphere per equal volume of particle.');
-        r_eff=input('\nEnter the effective radius of the particle in nm:');
-        clc
-        d=input('\nEnter the cubical voxel size in nm:');
-        clc
-        fprintf('\nSelecting shape of the target');
-        fprintf('\nThe package can calculate optical properties for 4 different shapes:');
-        fprintf('\n1. spherical.');
-        fprintf('\n2. ellipsoid, which is oriented in z direction.');
-        fprintf('\n3. rod with semi-sphere caps, which is oriented in z direction.');
-        fprintf('\n4. rectangular block, which is oriented in z direction.');
-        Np_shape=input('\n\nType the name of shape inside double quotation, \nEx. "spherical"  or "ellipsoid" or "rod" or "rec_block" :');
-        clc
-        fprintf('\nSelecting structure of the problem');
-        fprintf('\nThe package can calculate optical properties for 2 different structure:');
-        fprintf('\n1. monomeric.');
-        fprintf('\n2. dimeric.');
-        Structure=input('\n\nType the name of structure inside double quotation, \nEx. "monomeric" or "dimeric" :');
-        clc
+%         fprintf('\nThe package can be run both in CPU and GPU.');
+%         GPU=input('\nEnter 1 for running in GPU, and 0 for running in CPU:');
+%         clc
+%         nb=input('\nEnter the refractive index of the surrounding medium:');
+%         clc
+%         fprintf('\nEffective radius is defined as the radius of a sphere per equal volume of particle.');
+%         r_eff=input('\nEnter the effective radius of the particle in nm:');
+%         clc
+%         d=input('\nEnter the cubical voxel size in nm:');
+%         clc
+%         fprintf('\nSelecting shape of the target');
+%         fprintf('\nThe package can calculate optical properties for 4 different shapes:');
+%         fprintf('\n1. spherical.');
+%         fprintf('\n2. ellipsoid, which is oriented in z direction.');
+%         fprintf('\n3. rod with semi-sphere caps, which is oriented in z direction.');
+%         fprintf('\n4. rectangular block, which is oriented in z direction.');
+%         Np_shape=input('\n\nType the name of shape inside double quotation, \nEx. "spherical"  or "ellipsoid" or "rod" or "rec_block" :');
+%         clc
+%         fprintf('\nSelecting structure of the problem');
+%         fprintf('\nThe package can calculate optical properties for 2 different structure:');
+%         fprintf('\n1. monomeric.');
+%         fprintf('\n2. dimeric.');
+%         Structure=input('\n\nType the name of structure inside double quotation, \nEx. "monomeric" or "dimeric" :');
+%         clc
         if Structure=="dimeric"
             fprintf('\nThree kind of arragments for neighboring NPs:');
             fprintf('\n1. For head to tail orientation in z-direction, type "z_orient"  \n');
@@ -78,16 +79,16 @@ function [d, N, r_eff, t0_initial, Total_Time, Time_each, Wavelength,  Q_EXT, Q_
         k=2*pi./Wavelength*nb;              % wave vector of light in first layer
         
         
-        fprintf('\nChoosing polarization and propogation direction of the incident light:');
-        E01=input('\nEnter polarization direction, \nex. [0 0 1] for z direction:');
-        K01=input('\nEnter propogation direction, \nex. [1 0 0] for x direction:');
-        clc
+%         fprintf('\nChoosing polarization and propogation direction of the incident light:');
+%         E01=input('\nEnter polarization direction, \nex. [0 0 1] for z direction:');
+%         K01=input('\nEnter propogation direction, \nex. [1 0 0] for x direction:');
+%         clc
         
         %=============== Obtaining Modified dielectric function ==================%
         %=========================================================================%
-        fprintf('\nModifying the electric permitivity of NPs \nby considering size effec in collision frequency');
-        Np_name=input('Choose the name of the Np,\nEx. "Au" or "Ag" or "Cu" or "other" :');
-        clc
+%         fprintf('\nModifying the electric permitivity of NPs \nby considering size effec in collision frequency');
+%         Np_name=input('Choose the name of the Np,\nEx. "Au" or "Ag" or "Cu" or "other" :');
+%         clc
         if Np_name=="Au"
             Wp=8.9*1.5186*(10^15);              % plasma frequency of Au
             L0=0.07/6.58211951440*10^(-16);     % Collision freguency of Au in bulk medium
@@ -141,21 +142,21 @@ function [d, N, r_eff, t0_initial, Total_Time, Time_each, Wavelength,  Q_EXT, Q_
             ep_nps_eb=eps_nps./epsb;  % Ratio of metal-to-medium dielectric function
         end
         %=========================================================================%
-        fprintf('\n choosing the Meshing: \n');
-        fprintf('\1. Standard Meshing: The particle size is set to be equal to the distance between outer edges of two opposite boundary dipoles\n\n');
-        fprintf('\2. Nonstandard Meshing:The particle size is set to be equal to the distance between the center of two opposite boundary dipoles\n');
-        Meshing=input('\n Type 1 if it is standard meshing, otherwise type 2:');
+%         fprintf('\n choosing the Meshing: \n');
+%         fprintf('\1. Standard Meshing: The particle size is set to be equal to the distance between outer edges of two opposite boundary dipoles\n\n');
+%         fprintf('\2. Nonstandard Meshing:The particle size is set to be equal to the distance between the center of two opposite boundary dipoles\n');
+%         Meshing=input('\n Type 1 if it is standard meshing, otherwise type 2:');
         
         % Finding coordinate of the dipoles inside the rectangular block %
         [Max_x,Max_y,Max_z,N,Nx,Ny,Nz,r_block,X,Y,Z,d_inter]=Coordinates1(Meshing,GPU,d,Lx,Ly,Lz,...
             d_eff,Structure,arrangement);
         
         fprintf('\nSelecting the incident light:')
-        fprintf('\nThe package can support two incident light:');
-        fprintf('\n1. plane wave.');
-        fprintf('\n2. gaussian.');
-        IB=input('\n\nEnter the name of incident beam inside double quotation, \nEx. "plane wave" or "gaussian" :');
-        clc
+%         fprintf('\nThe package can support two incident light:');
+%         fprintf('\n1. plane wave.');
+%         fprintf('\n2. gaussian.');
+%         IB=input('\n\nEnter the name of incident beam inside double quotation, \nEx. "plane wave" or "gaussian" :');
+%         clc
         if IB=="plane wave"
             z0=0;              % Focus point of the Gaussian beam
             Waist_r=100;       % ratio of waist raduis of beam to wavelength
@@ -318,10 +319,11 @@ function [d, N, r_eff, t0_initial, Total_Time, Time_each, Wavelength,  Q_EXT, Q_
         % fprintf('\n\nI. Extinction efficiency:\n'); disp(Q_EXT); fprintf('\n\nII.
         % Absorption efficiency:\n'); disp(Q_ABS); fprintf('\n\nIII. Scattering
         % efficiency:\n'); disp(Q_SCAT);
-        fprintf('\nTHE RESULTS CAN BE FOUND IN  Result_Spectra.mat FILE');
-        
-        save Result_Spectra20 d N r_eff t0_initial Total_Time Time_each Wavelength  Q_EXT Q_ABS Q_SCAT
-        %=========================================================================%
+
+%         fprintf('\nTHE RESULTS CAN BE FOUND IN  Result_Spectra.mat FILE');
+%     
+%         save Result_Spectra20 d N r_eff t0_initial Total_Time Time_each Wavelength  Q_EXT Q_ABS Q_SCAT
+%         %=========================================================================%
 
 
 
