@@ -1,14 +1,14 @@
 # **matlab_project1**  
 
 ## **Project Overview**  
-This project automates the process of generating and processing parameter combinations for different shapes such as **Sphere, Rod, and Ellipsoid**. The workflow consists of two main steps:  
+This project automates the process of generating and processing parameter combinations for different shapes such as **spherical, Rod, and Ellipsoid**. The workflow consists of two main steps:  
 
 1. **Generating Parameter Combinations:**  
    - The first script creates **all possible combinations of parameters**.  
    - These combinations are **saved in CSV files** for different shapes (**Spherical, Rod, Ellipsoid, etc.**).  
 
 2. **Processing the Generated Files:**  
-   - Each **shape-specific CSV file** (e.g., `SPHERE.csv`) is read **row by row**.  
+   - Each **shape-specific CSV file** (e.g., `spherical.csv`) is read **row by row**.  
    - Each row is **fed as input** to the core script.  
    - The script **processes the input** and **saves the output** in `.csv` or `.mat` format in the **results folder**.  
    - This process is repeated for **other shape files** like `ROD.csv` and `ELLIPSOID.csv`.  
@@ -18,7 +18,7 @@ This project automates the process of generating and processing parameter combin
 ```
 Step 1: Generate all possible parameter combinations → Save to CSV files  
 Step 2: Read CSV files row by row → Process with core script → Save results in .csv/.mat  
-Step 3: Repeat for all shape types (Sphere, Rod, Ellipsoid, etc.)
+Step 3: Repeat for all shape types (spherical, Rod, Ellipsoid, etc.)
 ```
 
 ## **Directory Structure**
