@@ -32,7 +32,7 @@ optimum_ratio = 33.333;
 refractive_indices = [1.3617, 1.372, 1.383, 1.3940, 1.4049, 1.41590, 1.4270, 1.4381, 1.4494, 1.4607, 1.4722];
 
 % Define shapes
-shapes = {'sphere', 'rod', 'ellipsoid'};
+shapes = {'spherical', 'rod', 'ellipsoid'};
 
 % Define light directions (same as Python)
 light_directions = [
@@ -42,8 +42,8 @@ light_directions = [
 ];
 
 % Define parameters for each shape
-sphere_radii = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
-voxel_sizes_sphere = [0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65, 1.8];
+spherical_radii = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
+voxel_sizes_spherical = [0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65, 1.8];
 
 radius_effective_rod = [10, 15, 20, 25, 30, 35, 40, 45];
 voxel_sizes_rod = [0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125];
@@ -65,10 +65,10 @@ for shape_idx = 1:length(shapes)
     fprintf("\nProcessing shape: %s\n", shape);
     
     % Generate combinations for Spheres
-    if strcmp(shape, 'sphere')
-        for i = 1:length(sphere_radii)
-            r_eff = sphere_radii(i);
-            voxel_size = voxel_sizes_sphere(i);
+    if strcmp(shape, 'spherical')
+        for i = 1:length(spherical_radii)
+            r_eff = spherical_radii(i);
+            voxel_size = voxel_sizes_spherical(i);
             ratio = r_eff / voxel_size;
             for nb = refractive_indices
                 for light_dir = light_directions'
