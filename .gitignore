@@ -24,3 +24,7 @@
 *.csv
 /tests/test.m
 *.m
+!catherine/MPDDA-1.0-master/MPDDA-1.0-master/Absorption_Spectra.m
+!catherine/MPDDA-1.0-master/MPDDA-1.0-master/maincode.m
+!catherine/MPDDA-1.0-master/MPDDA-1.0-master/generateinput.m
+!catherine/MPDDA-1.0-master/MPDDA-1.0-master/Nps_parameters.m
