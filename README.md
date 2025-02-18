@@ -5,7 +5,7 @@ This project automates the process of generating and processing parameter combin
 
 1. **Generating Parameter Combinations:**  
    - The first script creates **all possible combinations of parameters**.  
-   - These combinations are **saved in CSV files** for different shapes (**Sphere, Rod, Ellipsoid, etc.**).  
+   - These combinations are **saved in CSV files** for different shapes (**Spherical, Rod, Ellipsoid, etc.**).  
 
 2. **Processing the Generated Files:**  
    - Each **shape-specific CSV file** (e.g., `SPHERE.csv`) is read **row by row**.  
