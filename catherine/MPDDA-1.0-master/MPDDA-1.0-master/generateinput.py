@@ -14,7 +14,7 @@ optimum_ratio = 33.333
 # common parameters for all shapes
 refractive_indices = [1.3617, 1.372, 1.383, 1.3940, 1.4049, 1.41590, 1.4270, 1.4381, 1.4494, 1.4607, 1.4722]
 
-shapes = ['sphere','rod','ellipsoid']
+shapes = ['spherical','rod','ellipsoid']
 # Define parameter values
 # light_directions = [(0, 0, 0), (0.1, 0.1, 0.1), (0.2, 0.2, 0.2), (0.3, 0.3, 0.3), (0.4, 0.4, 0.4), (0.5, 0.5, 0.5), (0.6, 0.6, 0.6), (0.7, 0.7, 0.7),(0.8, 0.8, 0.8), (0.9, 0.9, 0.9), (1, 1, 1)]
 light_directions = [
@@ -27,23 +27,23 @@ light_directions = [
 
 # Define variable parameters
 refractive_indices = [1.3617, 1.372, 1.383, 1.3940, 1.4049, 1.41590, 1.4270, 1.4381, 1.4494, 1.4607, 1.4722]
-shapes = ['sphere', 'rod', 'ellipsoid']
+shapes = ['spherical', 'rod', 'ellipsoid']
 light_directions = [
     (0, 0, 0), (0.1, 0.1, 0.1), (0.2, 0.2, 0.2), (0.3, 0.3, 0.3), 
     (0.4, 0.4, 0.4), (0.5, 0.5, 0.5), (0.6, 0.6, 0.6), (0.7, 0.7, 0.7),
     (0.8, 0.8, 0.8), (0.9, 0.9, 0.9), (1, 1, 1)
 ]
 
-# Sphere radius and corresponding voxel sizes
-sphere_radii = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
+# spherical radius and corresponding voxel sizes
+spherical_radii = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
 voxel_sizes = [0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65, 1.8]
 
 # Generate valid combinations with restrictions
 valid_combinations = []
 for shape in shapes:
-    if shape == "sphere":
-        print(f"\n --> I am in the sphere shape")       
-        for r_eff, voxel_size in zip(sphere_radii, voxel_sizes):
+    if shape == "spherical":
+        print(f"\n --> I am in the spherical shape")       
+        for r_eff, voxel_size in zip(spherical_radii, voxel_sizes):
             for nb in refractive_indices:
                 for light_dir in light_directions:
                     for pol_dir in polarization_directions:
@@ -71,9 +71,9 @@ for shape in shapes:
         output_file_path1 = os.path.join(output_file_path,output_file_name)
         # df_combination
         df_combinations.to_csv(output_file_path1, index=False)
-        print(f"\n combination for the sphere is finished ..!and output_file: {output_file_name}\n")
+        print(f"\n combination for the spherical is finished ..!and output_file: {output_file_name}\n")
 
-        #  <........... combination for the sphere is finished .............> 
+        #  <........... combination for the spherical is finished .............> 
 
 
 # voxel_sizes = [0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5] # for rods
