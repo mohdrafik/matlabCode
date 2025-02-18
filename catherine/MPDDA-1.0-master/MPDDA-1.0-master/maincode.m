@@ -38,7 +38,7 @@ for file_idx = 1:length(csv_files)
     % Get full file path
     csv_file = fullfile(input_dir, csv_files(file_idx).name);
     
-    % Extract file name without extension (e.g., sphere, rod, ellipsoid)
+    % Extract file name without extension (e.g., spherical, rod, ellipsoid)
     [~, filename, ~] = fileparts(csv_file);
     filename_parts = strsplit(filename,'_');  % Split by _ (underscore)  --> Converts parameter_combinations_ellipsoid → {"parameter", "combinations", "ellipsoid"}.
     filenameforshape = filename_parts{end};   % filename for shape.
@@ -49,7 +49,7 @@ for file_idx = 1:length(csv_files)
     % Read CSV file into a table
     data_table = readtable(csv_file);
 
-        %   by default all sphere csv file parameter is taken which have common name.
+        %   by default all spherical csv file parameter is taken which have common name.
         r_eff_current_file = data_table.r_eff;             % Numeric
         nb_current_file = data_table.nb;                   % Numeric
         d_current_file = data_table.voxel_size;            % Numeric
@@ -57,8 +57,8 @@ for file_idx = 1:length(csv_files)
         light_y_current_file = data_table.light_y;         % Numeric
         light_z_current_file = data_table.light_z;         % Numeric
 
-    if filenameforshape == "sphere" 
-        fprintf(" sphere shape is matched:\n");
+    if filenameforshape == "spherical" 
+        fprintf(" spherical shape is matched:\n");
         % Ensure correct data types by extracting columns separately
 %         r_eff_sph = data_table.r_eff;             % Numeric
 %         nb_sph = data_table.nb;                   % Numeric
@@ -109,6 +109,9 @@ IB = "plane wave"; % incident_beam = 'plane wave';
     
     % Loop through each row in the table
     for row_idx = 1:height(data_table)
+
+
+        
         % Extract values from the table row
         r_eff = r_eff_current_file(row_idx); % effective r
         nb = nb_current_file(row_idx); % refractive index
@@ -122,7 +125,7 @@ IB = "plane wave"; % incident_beam = 'plane wave';
 
 
 
-        if Np_shape == "sphere"
+        if Np_shape == "spherical"
             ARyx = 0;
             ARzx = 0;
             AR = 0;
@@ -153,7 +156,7 @@ IB = "plane wave"; % incident_beam = 'plane wave';
       
         result_filename = sprintf('%s_result_row_%d.mat', filenameforshape, row_idx);
         save(fullfile(output_dir, result_filename), 'd', 'N', 'r_eff', 't0_initial', 'Total_Time', 'Time_each', 'Wavelength', 'Q_EXT', 'Q_ABS', 'Q_SCAT');
-        disp('Results saved to absorption_results.mat');
+%         disp('Results saved to absorption_results.mat');
 
 %% <--------- Save Results as a CSV (for tabular data) --------------> see .m file(saveresultCSV.m) where code is written for this csv in future .
 %         % Convert to table (assuming Wavelength & Q values are vectors)
@@ -166,7 +169,7 @@ IB = "plane wave"; % incident_beam = 'plane wave';
     end
 %     clc;
 %     clear ;
-  close;
+%   close;
 end
 
 fprintf('\nAll CSV files processed successfully. Results saved in %s\n', output_dir);
